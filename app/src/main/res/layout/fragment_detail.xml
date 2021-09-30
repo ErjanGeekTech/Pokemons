@@ -31,7 +31,6 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:fontFamily="@font/montserrat"
-       android:text="Fire"
        android:textColor="#4B4B4B"
        android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="@id/detail_txt_name"
