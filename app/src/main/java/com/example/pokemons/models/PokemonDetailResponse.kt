@@ -1,16 +1,41 @@
 package com.example.pokemons.models
 
+import com.google.gson.annotations.SerializedName
+
 data class PokemonDetailResponse(
-    val types: List<TypesItem>?,
+    @SerializedName("types")
+    val types: List<TypesItem>,
+
+    @SerializedName("pokemon")
     val pokemon: Pokemon,
-    val isBattleOnly: Boolean = false,
-    val isDefault: Boolean = false,
+
+    @SerializedName("isBattleOnly")
+    val isBattleOnly: Boolean,
+
+    @SerializedName("isDefault")
+    val isDefault: Boolean,
+
+    @SerializedName("sprites")
     val sprites: Sprites,
+
+    @SerializedName("versionGroup")
     val versionGroup: VersionGroup,
+
+    @SerializedName("name")
     val name: String,
-    val formOrder: Int = 0,
-    val id: Int = 0,
-    val formName: String = "",
-    val isMega: Boolean = false,
-    val order: Int = 0
+
+    @SerializedName("formOrder")
+    val formOrder: Int,
+
+    @SerializedName("id")
+    val id: Int,
+
+    @SerializedName("formName")
+    val formName: String,
+
+    @SerializedName("isMega")
+    val isMega: Boolean,
+
+    @SerializedName("order")
+    val order: Int
 )

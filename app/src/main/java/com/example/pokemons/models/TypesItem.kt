@@ -1,4 +1,11 @@
 package com.example.pokemons.models
 
-data class TypesItem(val slot: Int = 0,
-                     val type: Type)
+import com.google.gson.annotations.SerializedName
+
+data class TypesItem(
+    @SerializedName("slot")
+    val slot: Int,
+
+    @SerializedName("type")
+    val type: Type
+)
