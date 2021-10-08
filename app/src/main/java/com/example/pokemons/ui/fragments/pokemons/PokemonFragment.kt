@@ -3,21 +3,19 @@ package com.example.pokemons.ui.fragments.pokemons
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.pokemons.R
 import com.example.pokemons.base.BaseFragment
 import com.example.pokemons.databinding.FragmentPokemonsBinding
 import com.example.pokemons.models.PokemonResponse
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-@AndroidEntryPoint
 class PokemonFragment : BaseFragment<FragmentPokemonsBinding, PokemonViewModel>(
     R.layout.fragment_pokemons
 ), AdapterView.OnItemSelectedListener {
     override val binding by viewBinding(FragmentPokemonsBinding::bind)
-    override val viewModel: PokemonViewModel by activityViewModels()
+    override val viewModel: PokemonViewModel by sharedViewModel()
     private var detailId = 0
 
     override fun initialize() {

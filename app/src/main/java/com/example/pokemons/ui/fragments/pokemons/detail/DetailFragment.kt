@@ -1,7 +1,6 @@
 package com.example.pokemons.ui.fragments.pokemons.detail
 
 import android.net.Uri
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.pokemons.R
@@ -10,13 +9,14 @@ import com.example.pokemons.databinding.FragmentDetailBinding
 import com.example.pokemons.ui.fragments.pokemons.PokemonViewModel
 import com.example.pokemons.utils.isCapitalizing
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class DetailFragment : BaseFragment<FragmentDetailBinding, PokemonViewModel>(
     R.layout.fragment_detail
 ) {
     override val binding by viewBinding(FragmentDetailBinding::bind)
-    override val viewModel: PokemonViewModel by activityViewModels()
+    override val viewModel: PokemonViewModel by sharedViewModel()
     private val args: DetailFragmentArgs by navArgs()
 
     override fun setupRequests() {
